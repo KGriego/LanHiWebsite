@@ -52,15 +52,21 @@ export default class ServicesLayout extends Component {
               <List verticalAlign="middle" className="marginTop">
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>IRS Resolution & Audit Support</List.Content>
+                  <List.Content>
+                    <List.Description>IRS Resolution & Audit Support</List.Description>
+                  </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Federal or State Correspondence</List.Content>
+                  <List.Content>
+                    <List.Description>Federal or State Correspondence</List.Description>
+                  </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Hourly Bookkeeping Services</List.Content>
+                  <List.Content>
+                    <List.Description>Hourly Bookkeeping Services</List.Description>
+                  </List.Content>
                 </List.Item>
               </List>
             </Grid.Column>
@@ -69,19 +75,27 @@ export default class ServicesLayout extends Component {
               <List verticalAlign="middle" className="marginTop">
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Articles of Organization or Incorporation</List.Content>
+                  <List.Content>
+                    <List.Description>Articles of Organization or Incorporation</List.Description>
+                  </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Tax Identification Number</List.Content>
+                  <List.Content>
+                    <List.Description>Tax Identification Number</List.Description>
+                  </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>S-Corporation Election</List.Content>
+                  <List.Content>
+                    <List.Description>S-Corporation Election</List.Description>
+                  </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>New Quickbooks Set-Up</List.Content>
+                  <List.Content>
+                    <List.Description>New Quickbooks Set-Up</List.Description>
+                  </List.Content>
                 </List.Item>
               </List>
             </Grid.Column>
@@ -96,15 +110,25 @@ export default class ServicesLayout extends Component {
               <List verticalAlign="middle">
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Monthly/Quarterly Bookkeeping Services</List.Content>
+                  <List.Content>
+                    <List.Description>Monthly/Quarterly Bookkeeping Services</List.Description>
+                  </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Quarterly Quickbooks Review and Reconciliation</List.Content>
+                  <List.Content>
+                    <List.Description>
+                      Quarterly Quickbooks Review and Reconciliation
+                    </List.Description>
+                  </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Annual Quickbooks Review and Reconcilliation</List.Content>
+                  <List.Content>
+                    <List.Description>
+                      Annual Quickbooks Review and Reconcilliation
+                    </List.Description>
+                  </List.Content>
                 </List.Item>
               </List>
             </Grid.Column>
@@ -112,11 +136,15 @@ export default class ServicesLayout extends Component {
               <List verticalAlign="middle" style={{ marginTop: 5 }}>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Quarterly Financial Statement Preparation</List.Content>
+                  <List.Content>
+                    <List.Description>Quarterly Financial Statement Preparation</List.Description>
+                  </List.Content>
                 </List.Item>
                 <List.Item>
                   <List.Icon name="checkmark" />
-                  <List.Content>Annual Financial Statement Preparation</List.Content>
+                  <List.Content>
+                    <List.Description>Annual Financial Statement Preparation</List.Description>
+                  </List.Content>
                 </List.Item>
               </List>
             </Grid.Column>

@@ -3,7 +3,7 @@ import { Grid, Item, Divider, Icon, Accordion, List } from "semantic-ui-react";
 import Layout from "../components/Layout";
 import SEO from "../components/Seo";
 
-class about extends Component {
+class AboutUs extends Component {
   state = {
     WindowSize: 0,
     activeIndex: 0
@@ -207,4 +207,4 @@ class about extends Component {
   }
 }
 
-export default about;
+export default AboutUs;
