@@ -322,7 +322,9 @@ export default class ServicesLayout extends Component {
               </Item.Group>
             </Grid.Column>
             <Grid.Column computer="3" tablet="12">
-              <Button>Click Here</Button>
+              <Link to="/ContactUs">
+                <Button>Click Here</Button>
+              </Link>
             </Grid.Column>
             <Grid.Column computer="4" tablet="12">
               Image here

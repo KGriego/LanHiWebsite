@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, List, Segment, Header, Divider, Container } from "semantic-ui-react";
+import { Grid, List, Segment, Header, Container } from "semantic-ui-react";
 import "./Footer.css";
 
 class Footer extends React.Component {
@@ -43,16 +43,16 @@ class Footer extends React.Component {
                     <Link to="/">
                       <List.Item content="Home" />
                     </Link>
-                    <Link to="/services">
+                    <Link to="/Services">
                       <List.Item content="Services" />
                     </Link>
-                    <Link to="/resources">
+                    <Link to="/Resources">
                       <List.Item content="Resources" />
                     </Link>
-                    <Link to="/aboutUs">
+                    <Link to="/AboutUs">
                       <List.Item content="About Us" />
                     </Link>
-                    <Link to="/contact">
+                    <Link to="/ContactUs">
                       <List.Item content="Contact Info" />
                     </Link>
                   </List>
@@ -70,7 +70,7 @@ class Footer extends React.Component {
               <List.Item as="a" href="#">
                 Site Map
               </List.Item>
-              <List.Item as="a" href="/contact">
+              <List.Item as="a" href="/ContactUs">
                 Contact Us
               </List.Item>
               <List.Item as="a" href="#">

@@ -13,7 +13,9 @@ class Header extends Component {
     return (
       <Grid style={{ marginBottom: 20 }}>
         <Grid.Row style={{ padding: 0 }}>
-          <Grid.Column computer="2" tablet="1"> </Grid.Column>
+          <Grid.Column computer="2" tablet="1">
+            {" "}
+          </Grid.Column>
           <Grid.Column computer="4" tablet="11">
             <Item.Group>
               <Item style={{ margin: 20 }}>
@@ -63,7 +65,7 @@ class Header extends Component {
                 onClick={this.handleMenuState}
               />
             </Link>
-            <Link to="/Contact">
+            <Link to="/ContactUs">
               <Menu.Item
                 as="div"
                 name="contactInfo"
