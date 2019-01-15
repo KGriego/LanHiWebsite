@@ -16,20 +16,30 @@ class Footer extends React.Component {
                   <Header as="h2" content="Contact Us" />
                   <List>
                     <List.Item>
-                      <List.Header>Email</List.Header>
-                      office@lanhiassociates.com
+                      <List.Content>
+                        <List.Header>Email</List.Header>
+                        <List.Description>office@lanhiassociates.com</List.Description>
+                      </List.Content>
                     </List.Item>
                     <List.Item>
-                      <List.Header>Phone</List.Header>
-                      (360)-420-3387
+                      <List.Content>
+                        <List.Header>Phone</List.Header>
+                        <List.Description>(360)-420-3387</List.Description>
+                      </List.Content>
                     </List.Item>
                     <List.Item>
-                      <List.Header>Fax</List.Header>
-                      (360)-335-6869
+                      <List.Content>
+                        <List.Header>Fax</List.Header>
+                        <List.Description>(360)-335-6869</List.Description>
+                      </List.Content>
                     </List.Item>
                     <List.Item>
-                      <List.Header>Address</List.Header>
-                      608 S. 1st Street, Suite 209, Mount Vernon WA 98273
+                      <List.Content>
+                        <List.Header>Address</List.Header>
+                        <List.Description>
+                          608 S. 1st Street, Suite 209, Mount Vernon WA 98273
+                        </List.Description>
+                      </List.Content>
                     </List.Item>
                   </List>
                 </Grid.Column>
@@ -65,19 +75,31 @@ class Footer extends React.Component {
           <Grid.Row>
             <List horizontal divided style={{ lineHeight: 1, fontSize: "2em", margin: 50 }}>
               <List.Item style={{ lineHeight: 1.3 }}>
-                Copyright &#169; 2019 {this.props.siteTitle}. All rights reserved.
+                <List.Content>
+                  <List.Description>
+                    Copyright &#169; 2019 {this.props.siteTitle}. All rights reserved.
+                  </List.Description>
+                </List.Content>
               </List.Item>
               <List.Item as="a" href="#">
-                Site Map
+                <List.Content>
+                  <List.Description>Site Map</List.Description>
+                </List.Content>
               </List.Item>
               <List.Item as="a" href="/ContactUs">
-                Contact Us
+                <List.Content>
+                  <List.Description>Contact Us</List.Description>
+                </List.Content>
               </List.Item>
               <List.Item as="a" href="#">
-                Terms and Conditions
+                <List.Content>
+                  <List.Description>Terms and Conditions</List.Description>
+                </List.Content>
               </List.Item>
               <List.Item as="a" href="#">
-                Privacy Policy
+                <List.Content>
+                  <List.Description>Privacy Policy</List.Description>
+                </List.Content>
               </List.Item>
             </List>
           </Grid.Row>
