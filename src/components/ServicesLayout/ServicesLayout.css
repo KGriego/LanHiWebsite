@@ -1,0 +1,12 @@
+.servicesDescription {
+  text-align: justify;
+}
+.beforeHand {
+  text-align: center !important;
+}
+.beforeHandContent {
+  display: inline-block !important;
+}
+.marginTop {
+  margin: 30px 0px !important;
+}
