@@ -39,6 +39,10 @@ class ContactForm extends Component {
         error: true
       });
       return false;
+    } else if (
+      !(accountingNeeds || concernsOrQuestions || numberOfMonthlyTransactions || typeOfBusniess)
+    ) {
+      return false;
     } else {
       return false;
       // axios
