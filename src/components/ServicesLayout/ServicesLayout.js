@@ -7,7 +7,7 @@ import "./ServicesLayout.css";
 export default class ServicesLayout extends Component {
   render() {
     return (
-      <>
+      <div style={{ backgroundColor: "#F7F7F7" }}>
         <Header textAlign="center">Services</Header>
         <Grid centered style={{ margin: "20px 0px 0px" }}>
           <Grid.Row>
@@ -329,7 +329,7 @@ export default class ServicesLayout extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </>
+      </div>
     );
   }
 }

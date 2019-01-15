@@ -4,7 +4,7 @@ import { Grid, Header, List, Item } from "semantic-ui-react";
 export default class ResourcesLayout extends Component {
   render() {
     return (
-      <>
+      <div style={{ backgroundColor: "#F7F7F7" }}>
         <Header textAlign="center">Resources</Header>
         <Grid centered>
           <Grid.Row>
@@ -188,7 +188,7 @@ export default class ResourcesLayout extends Component {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </>
+      </div>
     );
   }
 }
