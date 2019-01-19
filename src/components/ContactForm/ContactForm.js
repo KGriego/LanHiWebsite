@@ -93,19 +93,22 @@ class ContactForm extends Component {
       <Grid centered>
         <Header textAlign="center">Contact Info</Header>
         <Grid.Row>
-          <Item.Group>
-            <Item>
-              <Item.Content>
-                <Item.Description>
-                  We know that the accounting needs for every business are unique. Use our form to
-                  tell us more about your needs and concerns, and we can help explore your options.
-                </Item.Description>
-              </Item.Content>
-            </Item>
-          </Item.Group>
+          <Grid.Column computer="12" tablet="12">
+            <Item.Group>
+              <Item>
+                <Item.Content>
+                  <Item.Description>
+                    We know that the accounting needs for every business are unique. Use our form to
+                    tell us more about your needs and concerns, and we can help explore your
+                    options.
+                  </Item.Description>
+                </Item.Content>
+              </Item>
+            </Item.Group>
+          </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column computer="5" tablet="10">
+          <Grid.Column computer="6" tablet="5" mobile="10" className="someMarginBottom">
             <Header>Contact Us</Header>
             <List>
               <List.Item>
@@ -126,7 +129,7 @@ class ContactForm extends Component {
               </List.Item>
             </List>
           </Grid.Column>
-          <Grid.Column computer="5" tablet="10">
+          <Grid.Column computer="6" tablet="5" mobile="10">
             <Header>Regular Hours</Header>
             <List bulleted>
               <List.Item>
@@ -160,19 +163,15 @@ class ContactForm extends Component {
             </List>
           </Grid.Column>
         </Grid.Row>
+        <Header>Contact Form</Header>
         <Grid.Row>
-          <Header>Contact Form</Header>
+          <Item>
+            <Item.Content>
+              <Item.Description>Fields marked with an * are required</Item.Description>
+            </Item.Content>
+          </Item>
         </Grid.Row>
-        <Grid.Row>
-          <Item.Group>
-            <Item>
-              <Item.Content>
-                <Item.Description>Fields marked with an * are required</Item.Description>
-              </Item.Content>
-            </Item>
-          </Item.Group>
-        </Grid.Row>
-        <Grid.Row computer="14">
+        <Grid.Row computer="10">
           <Form
             success={sent}
             size="big"

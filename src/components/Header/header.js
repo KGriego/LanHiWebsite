@@ -1,15 +1,41 @@
 import { Link } from "gatsby";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Menu, Grid, Item, Divider } from "semantic-ui-react";
+import { Menu, Grid, Item, Divider, Icon } from "semantic-ui-react";
 import "./header.css";
 
 class Header extends Component {
-  state = {};
+  state = {
+    hidden: false,
+    WindowSize: 400
+  };
+  componentDidMount() {
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
+  }
+  componentWillUnmount() {
+    window.addEventListener("resize", null);
+  }
+  handleMenuState = (e, { name }) => this.setState({ activeItem: name });
+  openMenu = e => {
+    e.preventDefault();
+    this.setState({ hidden: !this.state.hidden });
+  };
+  handleResize = () => {
+    this.setState({ WindowSize: window.innerWidth });
+  };
   handleMenuState = (e, { name }) => this.setState({ activeItem: name });
   render() {
-    const { activeItem } = this.state;
+    const { activeItem, hidden, WindowSize } = this.state;
     const { siteTitle } = this.props;
+    let mobile;
+    console.log(WindowSize);
+    if (WindowSize >= 780) {
+      mobile = false;
+    } else {
+      mobile = true;
+    }
+    console.log(mobile);
     return (
       <Grid style={{ marginBottom: 20 }}>
         <Grid.Row style={{ padding: 0 }}>
@@ -32,7 +58,10 @@ class Header extends Component {
         </Grid.Row>
         <Divider style={{ margin: ".5rem 0rem" }} />
         <Grid.Row centered style={{ padding: 0 }}>
-          <Menu size="huge" secondary>
+          <Menu
+            size="huge"
+            secondary
+            className={!mobile ? "" : hidden ? "showMobileMenu openMobileMenu" : "hideMobileMenu"}>
             <Link to="/">
               <Menu.Item
                 as="div"
@@ -74,6 +103,13 @@ class Header extends Component {
               />
             </Link>
           </Menu>
+          <Grid.Column only="tablet mobile" tablet="1" mobile="1">
+            <Menu secondary className={mobile ? "showMobileMenu" : "hideMobileMenu"}>
+              <Menu.Item>
+                <Icon onClick={this.openMenu} name="bars" />
+              </Menu.Item>
+            </Menu>
+          </Grid.Column>
         </Grid.Row>
       </Grid>
     );

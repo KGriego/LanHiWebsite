@@ -14,14 +14,14 @@ export default class HomePage extends Component {
           <LazyHero
             imageSrc="https://unsplash.it/2000/1000"
             parallaxOffset={100}
-            opacity="0.4"
+            opacity={0.4}
             style={{ overflow: "hidden" }}>
             <h1>LANHI ASSOCIATES</h1>
           </LazyHero>
         </Header>
         <Grid centered style={{ margin: "20px 0px 0px" }}>
           <Grid.Row style={{ margin: "0px 0px 100px" }}>
-            <Grid.Column computer="4">
+            <Grid.Column computer="4" tablet="12" className="someMarginBototm">
               <CoookieCollector />
               <Item className="homeContentContainer">
                 <Item.Header className="homeContentTitle">Bookkeeping Services</Item.Header>
@@ -34,7 +34,7 @@ export default class HomePage extends Component {
                 </Link>
               </Item>
             </Grid.Column>
-            <Grid.Column computer="4">
+            <Grid.Column computer="4" tablet="12" className="someMarginBototm">
               <CoookieCollector />
               <Item className="homeContentContainer">
                 <Item.Header className="homeContentTitle">Your Taxes Matter</Item.Header>
@@ -47,7 +47,7 @@ export default class HomePage extends Component {
                 </Item.Description>
               </Item>
             </Grid.Column>
-            <Grid.Column computer="4">
+            <Grid.Column computer="4" tablet="12" className="someMarginBototm">
               <CoookieCollector />
               <Item className="homeContentContainer">
                 <Item.Header className="homeContentTitle">Your business matters</Item.Header>
