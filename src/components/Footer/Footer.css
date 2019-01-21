@@ -1,3 +1,10 @@
 .footer {
   background-color: #e3e3e3 !important;
 }
+h3.footerNav {
+  color: #ae271c !important;
+}
+h3.footerNav:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}

@@ -20,12 +20,14 @@ export default class HomePage extends Component {
           </LazyHero>
         </Header>
         <Grid centered style={{ margin: "20px 0px 0px" }}>
-          <Grid.Row style={{ margin: "0px 0px 100px" }}>
+          <Grid.Row style={{ margin: "0px 0px 50px" }}>
             <Grid.Column computer="4" tablet="12" className="someMarginBototm">
               <CoookieCollector />
               <Item className="homeContentContainer">
-                <Item.Header className="homeContentTitle">Bookkeeping Services</Item.Header>
-                <Item.Description className="homeContentDescription">
+                <Item.Header as="h3" className="homeContentTitle">
+                  Bookkeeping Services
+                </Item.Header>
+                <Item.Description as="p" className="homeContentDescription">
                   If you need help with your bookkeeping, we have you covered. We offer various
                   bookkeeping services that will meet your needs.
                 </Item.Description>
@@ -37,8 +39,10 @@ export default class HomePage extends Component {
             <Grid.Column computer="4" tablet="12" className="someMarginBototm">
               <CoookieCollector />
               <Item className="homeContentContainer">
-                <Item.Header className="homeContentTitle">Your Taxes Matter</Item.Header>
-                <Item.Description className="homeContentDescription">
+                <Item.Header as="h3" className="homeContentTitle">
+                  Your Taxes Matter
+                </Item.Header>
+                <Item.Description as="p" className="homeContentDescription">
                   Need help with your tax returns? We offer these services and will get the work
                   done for you. We’re dedicated to our clients and we've represented them in audits
                   with Federal and State taxing authorities. We take continuing education classes
@@ -50,8 +54,10 @@ export default class HomePage extends Component {
             <Grid.Column computer="4" tablet="12" className="someMarginBototm">
               <CoookieCollector />
               <Item className="homeContentContainer">
-                <Item.Header className="homeContentTitle">Your business matters</Item.Header>
-                <Item.Description className="homeContentDescription">
+                <Item.Header as="h3" className="homeContentTitle">
+                  Your business matters
+                </Item.Header>
+                <Item.Description as="p" className="homeContentDescription">
                   We develop strategies for both business and individual clients. And we work hard
                   and long hours when they need us—even after tax season. So let us tackle your most
                   pressing financial issues.

@@ -12,3 +12,12 @@
   z-index: 999;
   top: 100%;
 }
+h1 {
+  color: #ae271c !important;
+  font-weight: bold;
+}
+a div.item {
+  color: #ae271c !important;
+  line-height: inherit !important;
+  font-weight: bold !important;
+}

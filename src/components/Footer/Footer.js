@@ -18,7 +18,9 @@ class Footer extends React.Component {
                     <List.Item>
                       <List.Content>
                         <List.Header>Email</List.Header>
-                        <List.Description>office@lanhiassociates.com</List.Description>
+                        <List.Description as="a" href="mailto:office@lanhiassociates.com">
+                          office@lanhiassociates.com
+                        </List.Description>
                       </List.Content>
                     </List.Item>
                     <List.Item>
@@ -50,21 +52,49 @@ class Footer extends React.Component {
                     content="Navigation Menu"
                   />
                   <List inverted bulleted>
-                    <Link to="/">
-                      <List.Item content="Home" />
-                    </Link>
-                    <Link to="/Services">
-                      <List.Item content="Services" />
-                    </Link>
-                    <Link to="/Resources">
-                      <List.Item content="Resources" />
-                    </Link>
-                    <Link to="/AboutUs">
-                      <List.Item content="About Us" />
-                    </Link>
-                    <Link to="/ContactUs">
-                      <List.Item content="Contact Info" />
-                    </Link>
+                    <List.Item>
+                      <Link to="/">
+                        <List.Header as="h3" className="footerNav">
+                          Home
+                        </List.Header>
+                      </Link>
+                    </List.Item>
+                    <List.Item>
+                      <Link to="/Services">
+                        <List.Content>
+                          <List.Header as="h3" className="footerNav">
+                            Services
+                          </List.Header>
+                        </List.Content>
+                      </Link>
+                    </List.Item>
+                    <List.Item>
+                      <Link to="/Resources">
+                        <List.Content>
+                          <List.Header as="h3" className="footerNav">
+                            Resources
+                          </List.Header>
+                        </List.Content>
+                      </Link>
+                    </List.Item>
+                    <List.Item>
+                      <Link to="/AboutUs">
+                        <List.Content>
+                          <List.Header as="h3" className="footerNav">
+                            About Us
+                          </List.Header>
+                        </List.Content>
+                      </Link>
+                    </List.Item>
+                    <List.Item>
+                      <Link to="/ContactUs">
+                        <List.Content>
+                          <List.Header as="h3" className="footerNav">
+                            Contact Us
+                          </List.Header>
+                        </List.Content>
+                      </Link>
+                    </List.Item>
                   </List>
                 </Grid.Column>
               </Grid.Row>
@@ -81,24 +111,9 @@ class Footer extends React.Component {
                   </List.Description>
                 </List.Content>
               </List.Item>
-              <List.Item as="a" href="#">
-                <List.Content>
-                  <List.Description>Site Map</List.Description>
-                </List.Content>
-              </List.Item>
               <List.Item as="a" href="/ContactUs">
                 <List.Content>
                   <List.Description>Contact Us</List.Description>
-                </List.Content>
-              </List.Item>
-              <List.Item as="a" href="#">
-                <List.Content>
-                  <List.Description>Terms and Conditions</List.Description>
-                </List.Content>
-              </List.Item>
-              <List.Item as="a" href="#">
-                <List.Content>
-                  <List.Description>Privacy Policy</List.Description>
                 </List.Content>
               </List.Item>
             </List>

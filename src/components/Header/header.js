@@ -24,12 +24,10 @@ class Header extends Component {
   handleResize = () => {
     this.setState({ WindowSize: window.innerWidth });
   };
-  handleMenuState = (e, { name }) => this.setState({ activeItem: name });
   render() {
     const { activeItem, hidden, WindowSize } = this.state;
     const { siteTitle } = this.props;
     let mobile;
-    console.log(WindowSize);
     if (WindowSize >= 780) {
       mobile = false;
     } else {
@@ -46,7 +44,7 @@ class Header extends Component {
             <Item.Group>
               <Item style={{ margin: 20 }}>
                 <Item.Content>
-                  <Item.Header>{siteTitle}</Item.Header>
+                  <Item.Header as="h1">{siteTitle}</Item.Header>
                   <Item.Description style={{ margin: 0 }}>
                     Accounting & Tax Professionals
                   </Item.Description>
@@ -61,6 +59,7 @@ class Header extends Component {
           <Menu
             size="huge"
             secondary
+            style={{ margin: 0 }}
             className={!mobile ? "" : hidden ? "showMobileMenu openMobileMenu" : "hideMobileMenu"}>
             <Link to="/">
               <Menu.Item
