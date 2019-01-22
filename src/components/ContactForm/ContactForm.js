@@ -163,7 +163,7 @@ class ContactForm extends Component {
               style={{ width: "80%" }}
               error={error}
               success={sent}
-              netlify={""}>
+              data-netlify={true}>
               <Form.Group widths="equal">
                 <Form.Input
                   fluid
