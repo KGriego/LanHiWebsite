@@ -44,7 +44,7 @@ class ContactForm extends Component {
     fetch("/ContactUs/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ ...DataToSend })
+      body: encode({ "form-name": "LanHiBusinessContact", ...DataToSend })
     })
       .then(res => {
         console.log(res);
@@ -163,7 +163,10 @@ class ContactForm extends Component {
               style={{ width: "80%" }}
               error={error}
               success={sent}
-              data-netlify={true}>
+              data-netlify="true"
+              data-netlify-recaptcha="true"
+              data-netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
               <Form.Group widths="equal">
                 <Form.Input
                   fluid
