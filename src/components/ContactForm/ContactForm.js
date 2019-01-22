@@ -48,7 +48,13 @@ class ContactForm extends Component {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...DataToSend })
     })
-      .then(() => this.setState({ sent: true }))
+      .then(res => {
+        if (res.status === 404) {
+          this.setState({ error: true });
+        } else {
+          this.setState({ sent: true });
+        }
+      })
       .catch(error => alert(error));
   };
   render() {
@@ -174,7 +180,7 @@ class ContactForm extends Component {
                   fluid
                   label="Email*"
                   type="email"
-                  placeholder="JohnDoe@example.com"
+                  placeholder="JohnDoe@email.com"
                   name="email"
                   value={email}
                   onChange={this.handleChange}
@@ -191,16 +197,16 @@ class ContactForm extends Component {
                 <Form.Input
                   label="Average Monthly Transactions"
                   placeholder="Number of Monthly Transactions"
-                  value={monthlyTransactions}
                   name="monthlyTransactions"
+                  value={monthlyTransactions}
                   onChange={this.handleChange}
                 />
               </Form.Group>
               <Form.Field
                 control={TextArea}
                 label="Accounting Needs*"
-                name="accountNeeds"
                 placeholder="Tell us more about your accounting needs"
+                name="accountNeeds"
                 value={accountNeeds}
                 onChange={this.handleChange}
                 error={errorForMessage}
