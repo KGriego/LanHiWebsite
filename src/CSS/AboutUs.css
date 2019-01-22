@@ -4,4 +4,5 @@
   line-height: 1.8 !important;
   margin-bottom: 1.25rem !important;
   text-rendering: optimizeLegibility !important;
+  text-align: justify;
 }
