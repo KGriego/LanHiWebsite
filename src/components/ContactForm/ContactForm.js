@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import axios from "axios";
 import { Button, Form, Message, TextArea, Grid, Header, Item, List } from "semantic-ui-react";
+import { SendForm } from "./ContactFormHelper";
 
 class ContactForm extends Component {
   state = {
@@ -21,62 +22,48 @@ class ContactForm extends Component {
   };
   sendEmail = e => {
     e.preventDefault();
+    const { state } = this;
     //don't forget to add phonenumber back in here
     const {
       accountingNeeds,
       concernsOrQuestions,
       email,
+      monthlyTransactions,
       name,
-      numberOfMonthlyTransactions,
-      typeOfBusniess
+      typeOfBusniess,
+      error
     } = this.state;
-    if (name === "") {
-      this.setState({
-        errorForName: true,
-        error: true
-      });
-      return false;
-    } else if (email === "") {
-      this.setState({
-        errorForEmail: true,
-        error: true
-      });
-      return false;
-    } else if (
-      !(accountingNeeds || concernsOrQuestions || numberOfMonthlyTransactions || typeOfBusniess)
-    ) {
-      return false;
-    } else {
-      return false;
-      // axios
-      //   .post("/contact/sendEmail", {
-      //     name,
-      //     email,
-      //     message,
-      //     topic,
-      //     phoneNumber
-      //   })
-      //   .then(res => {
-      //     if (res.status === 202) {
-      //       this.setState({
-      //         errorForName: false,
-      //         errorForEmail: false,
-      //         errorForMessage: false,
-      //         error: false,
-      //         sent: true,
-      //         name: "",
-      //         email: "",
-      //         message: "",
-      //         phoneNumber: "",
-      //         topic: ""
-      //       });
-      //     }
-      //   })
-      //   .catch(err => {
-      //     this.setState({ error: true });
-      //     console.log("err sending mail", err);
-      //   });
-    }
+    const result = SendForm(state);
+    this.setState({ ...result });
+    if (error === "") return false;
+    // axios
+    //   .post("/contact/sendEmail", {
+    //     name,
+    //     email,
+    //     message,
+    //     topic,
+    //     phoneNumber
+    //   })
+    //   .then(res => {
+    //     if (res.status === 202) {
+    //       this.setState({
+    //         errorForName: false,
+    //         errorForEmail: false,
+    //         errorForMessage: false,
+    //         error: false,
+    //         sent: true,
+    //         name: "",
+    //         email: "",
+    //         message: "",
+    //         phoneNumber: "",
+    //         topic: ""
+    //       });
+    //     }
+    //   })
+    //   .catch(err => {
+    //     this.setState({ error: true });
+    //     console.log("err sending mail", err);
+    //   });
   };
   render() {
     const {
@@ -178,12 +165,7 @@ class ContactForm extends Component {
             </Item>
           </Grid.Row>
           <Grid.Row computer="10">
-            <Form
-              success={sent}
-              size="big"
-              onSubmit={this.sendEmail}
-              style={{ width: "80%" }}
-              error={error}>
+            <Form success={sent} size="big" style={{ width: "80%" }} error={error} netlify={""}>
               <Form.Group widths="equal">
                 <Form.Input
                   fluid
