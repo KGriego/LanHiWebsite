@@ -43,7 +43,7 @@ class ContactForm extends Component {
       typeOfBusniess
     };
     e.preventDefault();
-    fetch("/", {
+    fetch("/ContactUs/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "contact", ...DataToSend })
