@@ -1,12 +1,21 @@
 .servicesDescription {
   text-align: justify;
+  line-height: 1.8;
+  font-size: 1em;
 }
 .beforeHand {
   text-align: center !important;
 }
 .beforeHandContent {
+  font-style: italic;
   display: inline-block !important;
 }
 .marginTop {
   margin: 30px 0px !important;
+}
+h3 {
+  color: #ae271c !important;
+}
+.ServicesPage .list * {
+  font-size: 1.05em !important;
 }

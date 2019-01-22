@@ -5,12 +5,10 @@
   display: none !important;
 }
 .openMobileMenu {
-  border-radius: 0% !important;
-  display: initial !important;
   position: absolute;
   background: grey !important;
   z-index: 999;
-  top: 100%;
+  top: 0;
 }
 h1 {
   color: #ae271c !important;

@@ -103,17 +103,19 @@ class Footer extends React.Component {
         </Segment>
         <Grid centered>
           <Grid.Row>
-            <List horizontal divided style={{ lineHeight: 1, fontSize: "2em", margin: 50 }}>
+            <List horizontal divided style={{ lineHeight: 1, fontSize: "1em", margin: 50 }}>
               <List.Item style={{ lineHeight: 1.3 }}>
                 <List.Content>
-                  <List.Description>
+                  <List.Description className="copyRight" as="p">
                     Copyright &#169; 2019 {this.props.siteTitle}. All rights reserved.
                   </List.Description>
                 </List.Content>
               </List.Item>
               <List.Item as="a" href="/ContactUs">
                 <List.Content>
-                  <List.Description>Contact Us</List.Description>
+                  <List.Description className="copyRight" as="p">
+                    Contact Us
+                  </List.Description>
                 </List.Content>
               </List.Item>
             </List>

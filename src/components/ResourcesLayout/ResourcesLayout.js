@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import { Grid, Header, List, Item } from "semantic-ui-react";
+import "./Resources.css";
 
 export default class ResourcesLayout extends Component {
   render() {
     return (
-      <div style={{ backgroundColor: "#F7F7F7" }}>
-        <Header textAlign="center">Resources</Header>
+      <div style={{ backgroundColor: "#F7F7F7" }} className="ResourcesPage">
+        <Header textAlign="center" style={{ padding: 25, fontSize: "2.25em", fontWeight: 400 }}>
+          Resources
+        </Header>
         <Grid centered>
           <Grid.Row>
             <Grid.Column computer="10">
-              <Header textAlign="center">External Links</Header>
+              <Header textAlign="center" as="h3">
+                External Links
+              </Header>
               <List>
                 <List.Item>
                   <List.Icon name="external" />
@@ -18,7 +23,7 @@ export default class ResourcesLayout extends Component {
                       <Item>
                         <Item.Content>
                           <Item.Description>
-                            <Item.Header as="a" href="https://www.google.com/docs">
+                            <Item.Header href="https://www.google.com/docs">
                               GOOGLE DOCS
                             </Item.Header>
                             A free Web-based application in which documents and spreadsheets can be
@@ -103,7 +108,9 @@ export default class ResourcesLayout extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column computer="10">
-              <Header textAlign="center">Documents And Forms</Header>
+              <Header textAlign="center" as="h3">
+                Documents And Forms
+              </Header>
               <Item>
                 <Item.Content>
                   <Item.Description>
@@ -113,7 +120,7 @@ export default class ResourcesLayout extends Component {
                   </Item.Description>
                 </Item.Content>
               </Item>
-              <List bulleted style={{ margin: "40px 40px 80px" }}>
+              <List bulleted style={{ margin: "40px 40px 80px" }} className="Docs">
                 <List.Item>
                   <List.Content>
                     <List.Header>Tax Deductions Entertainment</List.Header>

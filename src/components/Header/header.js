@@ -33,7 +33,6 @@ class Header extends Component {
     } else {
       mobile = true;
     }
-    console.log(mobile);
     return (
       <Grid style={{ marginBottom: 20 }}>
         <Grid.Row style={{ padding: 0 }}>
@@ -55,6 +54,13 @@ class Header extends Component {
           </Grid.Column>
         </Grid.Row>
         <Divider style={{ margin: ".5rem 0rem" }} />
+        <Grid.Row centered style={{ padding: 0 }}>
+          <Menu secondary className={mobile ? "showMobileMenu" : "hideMobileMenu"}>
+            <Menu.Item>
+              <Icon onClick={this.openMenu} name="bars" />
+            </Menu.Item>
+          </Menu>
+        </Grid.Row>
         <Grid.Row centered style={{ padding: 0 }}>
           <Menu
             size="huge"
@@ -102,13 +108,6 @@ class Header extends Component {
               />
             </Link>
           </Menu>
-          <Grid.Column only="tablet mobile" tablet="1" mobile="1">
-            <Menu secondary className={mobile ? "showMobileMenu" : "hideMobileMenu"}>
-              <Menu.Item>
-                <Icon onClick={this.openMenu} name="bars" />
-              </Menu.Item>
-            </Menu>
-          </Grid.Column>
         </Grid.Row>
       </Grid>
     );

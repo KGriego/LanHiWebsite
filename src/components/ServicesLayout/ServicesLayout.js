@@ -7,8 +7,10 @@ import "./ServicesLayout.css";
 export default class ServicesLayout extends Component {
   render() {
     return (
-      <div style={{ backgroundColor: "#F7F7F7" }}>
-        <Header textAlign="center">Services</Header>
+      <div style={{ backgroundColor: "#F7F7F7" }} className="ServicesPage">
+        <Header textAlign="center" style={{ padding: 25, fontSize: "2.25em", fontWeight: 400 }}>
+          Services
+        </Header>
         <Grid centered style={{ margin: "20px 0px 0px" }}>
           <Grid.Row>
             <Grid.Column computer="4" tablet="12">
@@ -48,7 +50,9 @@ export default class ServicesLayout extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column computer="6" tablet="12">
-              <Header textAlign="center">Hourly Services</Header>
+              <Header textAlign="center" as="h3">
+                Hourly Services
+              </Header>
               <List verticalAlign="middle" className="marginTop">
                 <List.Item>
                   <List.Icon name="checkmark" />
@@ -71,7 +75,9 @@ export default class ServicesLayout extends Component {
               </List>
             </Grid.Column>
             <Grid.Column computer="6" tablet="12">
-              <Header textAlign="center">New Business Set Up</Header>
+              <Header textAlign="center" as="h3">
+                New Business Set Up
+              </Header>
               <List verticalAlign="middle" className="marginTop">
                 <List.Item>
                   <List.Icon name="checkmark" />
@@ -102,7 +108,9 @@ export default class ServicesLayout extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column computer="12">
-              <Header textAlign="center">Book Keeping Services</Header>
+              <Header textAlign="center" as="h3">
+                Book Keeping Services
+              </Header>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
@@ -151,7 +159,9 @@ export default class ServicesLayout extends Component {
           </Grid.Row>
           <Grid.Row>
             <Grid.Column computer="12">
-              <Header textAlign="center">Tax Return Preparation & Filing</Header>
+              <Header textAlign="center" as="h3">
+                Tax Return Preparation & Filing
+              </Header>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
@@ -315,7 +325,7 @@ export default class ServicesLayout extends Component {
               <Item.Group className="beforeHand">
                 <Item>
                   <Item.Content>
-                    <Item.Header>Found what you're looking for?</Item.Header>
+                    <Item.Header as="h3">Found what you're looking for?</Item.Header>
                     <Item.Description>Contact us today!</Item.Description>
                   </Item.Content>
                 </Item>
@@ -323,7 +333,10 @@ export default class ServicesLayout extends Component {
             </Grid.Column>
             <Grid.Column computer="3" tablet="12">
               <Link to="/ContactUs">
-                <Button>Click Here</Button>
+                <Button
+                  style={{ backgroundColor: "#ae271c", borderColor: "#ae271c", color: "white" }}>
+                  Click Here
+                </Button>
               </Link>
             </Grid.Column>
             <Grid.Column computer="4" tablet="12">
