@@ -159,7 +159,7 @@ class ContactForm extends Component {
           <Grid.Row computer="10">
             <Form
               onSubmit={this.handleSubmit}
-              method="POST"
+              name="LanHiBusinessContact"
               size="big"
               style={{ width: "80%" }}
               error={error}
