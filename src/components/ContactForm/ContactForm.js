@@ -231,6 +231,7 @@ class ContactForm extends Component {
                 header="Email Sent"
                 content="I will get back to you as soon as possible"
               />
+              <div data-netlify-recaptcha="true" />
               <Button style={{ margin: 20 }} type="submit">
                 Submit
               </Button>
