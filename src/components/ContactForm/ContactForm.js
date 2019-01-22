@@ -22,9 +22,7 @@ class ContactForm extends Component {
     errorForName: false,
     sent: false
   };
-  handleChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value });
-  };
+  handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
   handleSubmit = e => {
     const {
       accountNeeds,
@@ -49,6 +47,7 @@ class ContactForm extends Component {
       body: encode({ "form-name": "contact", ...DataToSend })
     })
       .then(res => {
+        console.log(res);
         if (res.status === 404) {
           this.setState({ error: true });
         } else {
@@ -189,12 +188,14 @@ class ContactForm extends Component {
               </Form.Group>
               <Form.Group widths="equal">
                 <Form.Input
+                  type="text"
                   label="Type Of Busniess*"
                   name="typeOfBusniess"
                   value={typeOfBusniess}
                   onChange={this.handleChange}
                 />
                 <Form.Input
+                  type="text"
                   label="Average Monthly Transactions"
                   placeholder="Number of Monthly Transactions"
                   name="monthlyTransactions"
@@ -204,6 +205,7 @@ class ContactForm extends Component {
               </Form.Group>
               <Form.Field
                 control={TextArea}
+                type="text"
                 label="Accounting Needs*"
                 placeholder="Tell us more about your accounting needs"
                 name="accountNeeds"
@@ -213,6 +215,7 @@ class ContactForm extends Component {
               />
               <Form.Field
                 control={TextArea}
+                type="text"
                 label="Questions/Concerns For Us"
                 placeholder="Tell us any other questions, concerns, or special needs you may have."
                 name="concernsOrQuestions"
