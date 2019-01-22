@@ -44,7 +44,7 @@ class ContactForm extends Component {
     fetch("/ContactUs/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...DataToSend })
+      body: encode({ "form-name": "LanHiBusinessContact", ...DataToSend })
     })
       .then(res => {
         console.log(res);
