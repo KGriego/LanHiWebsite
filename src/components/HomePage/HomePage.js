@@ -12,15 +12,17 @@ export default class HomePage extends Component {
   render() {
     return (
       <div style={{ backgroundColor: "#F7F7F7" }}>
-        <Header textAlign="center" style={{ margin: "0px 0px 40px", paddingTop: 25 }}>
-          <LazyHero
-            imageSrc="https://unsplash.it/2000/1000"
-            parallaxOffset={100}
-            opacity={0.4}
-            style={{ overflow: "hidden" }}>
-            <h1>Teraza Group</h1>
-          </LazyHero>
-        </Header>
+        <Grid centered style={{ margin: "20px 0px 0px" }}>
+          <Grid.Row style={{ margin: "0px 0px 50px" }}>
+            <Grid.Column computer={"6"}>
+              <div className={"hero"}>
+                <Header textAlign="center" style={{ padding: 15 }}>
+                  <h1 className={"title"}>Teraza Group</h1>
+                </Header>
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
         <Grid centered style={{ margin: "20px 0px 0px" }}>
           <Grid.Row style={{ margin: "0px 0px 50px" }}>
             <Grid.Column computer="5" tablet="12" mobile="12" className="someMarginBototm">

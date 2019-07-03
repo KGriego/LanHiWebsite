@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Menu, Grid, Item, Divider, Icon } from "semantic-ui-react";
 import "./header.css";
+import SideNav from "../SideNav";
 
 class Header extends Component {
   state = {
@@ -43,7 +44,9 @@ class Header extends Component {
             <Item.Group>
               <Item style={{ margin: 20 }}>
                 <Item.Content>
-                  <Item.Header as="h1">{siteTitle}</Item.Header>
+                  <Link to="/">
+                    <Item.Header as="h1">{siteTitle}</Item.Header>
+                  </Link>
                   <Item.Description style={{ margin: 0 }}>
                     Accounting & Tax Professionals
                   </Item.Description>
@@ -55,18 +58,14 @@ class Header extends Component {
         </Grid.Row>
         <Divider style={{ margin: ".5rem 0rem" }} />
         <Grid.Row centered style={{ padding: 0 }}>
-          <Menu secondary className={mobile ? "showMobileMenu" : "hideMobileMenu"}>
+          <Menu secondary className={mobile ? "show" : "hidden"}>
             <Menu.Item>
               <Icon onClick={this.openMenu} name="bars" />
             </Menu.Item>
           </Menu>
         </Grid.Row>
-        <Grid.Row centered style={{ padding: 0 }}>
-          <Menu
-            size="huge"
-            secondary
-            style={{ margin: 0 }}
-            className={!mobile ? "" : hidden ? "showMobileMenu openMobileMenu" : "hideMobileMenu"}>
+        <Grid.Row centered style={{ padding: 0 }} className={mobile ? "hidden" : "show"}>
+          <Menu size="huge" secondary>
             <Link to="/">
               <Menu.Item
                 as="div"
@@ -109,6 +108,7 @@ class Header extends Component {
             </Link>
           </Menu>
         </Grid.Row>
+        {hidden && <SideNav hidden={hidden} />}
       </Grid>
     );
   }

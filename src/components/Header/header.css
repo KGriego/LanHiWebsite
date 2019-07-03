@@ -1,15 +1,3 @@
-.showMobileMenu {
-  display: block !important;
-}
-.hideMobileMenu {
-  display: none !important;
-}
-.openMobileMenu {
-  position: absolute;
-  background: grey !important;
-  z-index: 999;
-  top: 0;
-}
 h1 {
   color: #ae271c !important;
   font-weight: bold;
@@ -18,4 +6,10 @@ a div.item {
   color: #ae271c !important;
   line-height: inherit !important;
   font-weight: bold !important;
+}
+.show {
+  display: flex !important;
+}
+.hidden {
+  display: none !important;
 }
