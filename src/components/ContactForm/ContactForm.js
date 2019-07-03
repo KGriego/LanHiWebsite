@@ -44,10 +44,9 @@ class ContactForm extends Component {
     fetch("/ContactUs/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "LanHiBusinessContact", ...DataToSend })
+      body: encode({ "form-name": "TerazaGroupBusinessContact", ...DataToSend })
     })
       .then(res => {
-        console.log(res);
         if (res.status === 404) {
           this.setState({ error: true });
         } else {
@@ -97,7 +96,7 @@ class ContactForm extends Component {
               <List>
                 <List.Item>
                   <List.Header>Email</List.Header>
-                  office@lanhiassociates.com
+                  office@terazagroup.com
                 </List.Item>
                 <List.Item>
                   <List.Header>Phone</List.Header>

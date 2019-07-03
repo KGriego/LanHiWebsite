@@ -10,6 +10,12 @@
   transition-delay: 0ms, 0ms;
   box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, 0.1);
 }
+.imgStlying {
+  display: block !important;
+  width: 300px !important;
+  height: 300px !important;
+  margin: auto;
+}
 .homeContentContainer {
   text-align: center;
   margin-top: 40px;

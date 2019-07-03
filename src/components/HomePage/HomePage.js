@@ -3,7 +3,9 @@ import LazyHero from "react-lazy-hero";
 import { Link } from "gatsby";
 import { Grid, Item, Header } from "semantic-ui-react";
 
-import CoookieCollector from "../Images/cookieCollector";
+import FilingTaxes from "../Images/FilingTaxes";
+import MoneyImage from "../Images/MoneyImage";
+import PenImage from "../Images/PenImage";
 import "./HomePage.css";
 
 export default class HomePage extends Component {
@@ -16,13 +18,13 @@ export default class HomePage extends Component {
             parallaxOffset={100}
             opacity={0.4}
             style={{ overflow: "hidden" }}>
-            <h1>LANHI ASSOCIATES</h1>
+            <h1>Teraza Group</h1>
           </LazyHero>
         </Header>
         <Grid centered style={{ margin: "20px 0px 0px" }}>
           <Grid.Row style={{ margin: "0px 0px 50px" }}>
-            <Grid.Column computer="4" tablet="12" className="someMarginBototm">
-              <CoookieCollector />
+            <Grid.Column computer="5" tablet="12" mobile="12" className="someMarginBototm">
+              <FilingTaxes />
               <Item className="homeContentContainer">
                 <Item.Header as="h3" className="homeContentTitle">
                   Bookkeeping Services
@@ -36,8 +38,8 @@ export default class HomePage extends Component {
                 </Link>
               </Item>
             </Grid.Column>
-            <Grid.Column computer="4" tablet="12" className="someMarginBototm">
-              <CoookieCollector />
+            <Grid.Column computer="5" tablet="12" className="someMarginBototm">
+              <MoneyImage />
               <Item className="homeContentContainer">
                 <Item.Header as="h3" className="homeContentTitle">
                   Your Taxes Matter
@@ -51,8 +53,8 @@ export default class HomePage extends Component {
                 </Item.Description>
               </Item>
             </Grid.Column>
-            <Grid.Column computer="4" tablet="12" className="someMarginBototm">
-              <CoookieCollector />
+            <Grid.Column computer="5" tablet="12" className="someMarginBototm">
+              <PenImage />
               <Item className="homeContentContainer">
                 <Item.Header as="h3" className="homeContentTitle">
                   Your business matters

@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Item, Header } from "semantic-ui-react";
-import AdminACPR from "../components/Images/adminAcpr";
+import Teamwork from "../components/Images/Teamwork";
 import Layout from "../components/Layout";
 import SEO from "../components/Seo";
 import "../CSS/AboutUs.css";
@@ -26,7 +26,7 @@ const AboutUs = () => {
           </Header>
           <Grid.Row>
             <Grid.Column computer="7">
-              <AdminACPR />
+              <Teamwork />
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
@@ -35,9 +35,9 @@ const AboutUs = () => {
                 <Item>
                   <Item.Content>
                     <Item.Description as="p">
-                      LanHi Associates is an experienced accounting firm providing small business
-                      and individual accounting and tax services. With 17 years of accounting and
-                      tax experience, our clients can rest assured that they will receive quality
+                      Teraza Group is an experienced accounting firm providing small business and
+                      individual accounting and tax services. With 18 years of accounting and tax
+                      experience, our clients can rest assured that they will receive quality
                       services at affordable prices.
                     </Item.Description>
                   </Item.Content>

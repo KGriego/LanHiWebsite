@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "gatsby";
 import { Grid, Header, List, Item, Button } from "semantic-ui-react";
-import Chirpy from "../Images/Chirpy";
+import ComputerDesk from "../Images/ComputerDesk";
 import "./ServicesLayout.css";
 
 export default class ServicesLayout extends Component {
@@ -14,7 +14,7 @@ export default class ServicesLayout extends Component {
         <Grid centered style={{ margin: "20px 0px 0px" }}>
           <Grid.Row>
             <Grid.Column computer="4" tablet="12">
-              <Chirpy />
+              <ComputerDesk />
             </Grid.Column>
             <Grid.Column computer="8" tablet="12">
               <Item>

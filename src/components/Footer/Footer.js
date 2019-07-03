@@ -18,8 +18,8 @@ class Footer extends React.Component {
                     <List.Item>
                       <List.Content>
                         <List.Header>Email</List.Header>
-                        <List.Description as="a" href="mailto:office@lanhiassociates.com">
-                          office@lanhiassociates.com
+                        <List.Description as="a" href="mailto:office@terazagroup.com">
+                          office@terazagroup.com
                         </List.Description>
                       </List.Content>
                     </List.Item>
@@ -126,12 +126,8 @@ class Footer extends React.Component {
   }
 }
 
-Footer.propTypes = {
-  siteTitle: PropTypes.string
-};
+Footer.propTypes = { siteTitle: PropTypes.string };
 
-Footer.defaultProps = {
-  siteTitle: ``
-};
+Footer.defaultProps = { siteTitle: `` };
 
 export default Footer;

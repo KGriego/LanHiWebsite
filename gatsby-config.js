@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `LANHI ASSOCIATES`,
+    title: `Teraza Group`,
     description: `Accounting & Tax Professionals`,
-    siteURL: "lanhiassociates.com"
+    siteURL: "terazagroup.com"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
