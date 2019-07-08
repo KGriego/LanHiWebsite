@@ -1,15 +1,15 @@
-h1 {
+.navigation h1 {
   color: #ae271c !important;
   font-weight: bold;
 }
-a div.item {
+.navigation a div.item {
   color: #ae271c !important;
   line-height: inherit !important;
   font-weight: bold !important;
 }
-.show {
+.navigation .show {
   display: flex !important;
 }
-.hidden {
+.navigation .hidden {
   display: none !important;
 }

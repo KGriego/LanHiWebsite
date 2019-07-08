@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import axios from "axios";
 import { Button, Form, Message, TextArea, Grid, Header, Item, List } from "semantic-ui-react";
 
 const encode = data => {
@@ -22,12 +21,9 @@ class ContactForm extends Component {
     errorForName: false,
     sent: false
   };
-  encode = data =>
-    Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
   handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
   handleSubmit = e => {
+    e.preventDefault();
     const {
       accountNeeds,
       concernsOrQuestions,
@@ -36,21 +32,21 @@ class ContactForm extends Component {
       name,
       typeOfBusniess
     } = this.state;
-    const DataToSend = {
-      accountNeeds,
-      concernsOrQuestions,
-      email,
-      monthlyTransactions,
-      name,
-      typeOfBusniess
-    };
-    e.preventDefault();
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "TerazaGroupBusinessContact", ...DataToSend })
+      body: encode({
+        "form-name": "TerazaGroupBusinessContact",
+        name,
+        accountNeeds,
+        concernsOrQuestions,
+        email,
+        monthlyTransactions,
+        typeOfBusniess
+      })
     })
       .then(res => {
+        debugger;
         if (res.status === 404) {
           this.setState({ error: true });
         } else {
