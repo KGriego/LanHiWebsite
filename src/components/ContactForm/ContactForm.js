@@ -22,6 +22,10 @@ class ContactForm extends Component {
     errorForName: false,
     sent: false
   };
+  encode = data =>
+    Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
   handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
   handleSubmit = e => {
     const {
@@ -41,7 +45,7 @@ class ContactForm extends Component {
       typeOfBusniess
     };
     e.preventDefault();
-    fetch("/ContactUs/", {
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({ "form-name": "TerazaGroupBusinessContact", ...DataToSend })

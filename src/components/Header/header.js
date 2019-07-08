@@ -35,7 +35,7 @@ class Header extends Component {
       mobile = true;
     }
     return (
-      <Grid style={{ marginBottom: 20 }}>
+      <Grid style={{ marginBottom: 20 }} className={"header"}>
         <Grid.Row style={{ padding: 0 }}>
           <Grid.Column computer="2" tablet="1">
             {" "}

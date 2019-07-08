@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import LazyHero from "react-lazy-hero";
 import { Link } from "gatsby";
 import { Grid, Item, Header } from "semantic-ui-react";
 
