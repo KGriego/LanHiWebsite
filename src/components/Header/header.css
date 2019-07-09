@@ -7,10 +7,18 @@
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
 }
+.navigation .item .description {
+  color: #686868 !important;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
 .navigation a div.item {
   color: #ae271c !important;
   line-height: inherit !important;
   font-weight: bold !important;
+}
+.navigation .bars.icon {
+  color: #686868;
 }
 .navigation .show {
   display: flex !important;

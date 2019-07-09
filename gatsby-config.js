@@ -40,8 +40,8 @@ module.exports = {
       options: {
         plugins: [`gatsby-remark-prismjs`]
       }
-    },
+    }
     // To learn more, visit: https://gatsby.app/offline
-    "gatsby-plugin-offline"
+    // "gatsby-plugin-offline"
   ]
 };
