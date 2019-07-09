@@ -89,7 +89,6 @@ class ContactForm extends Component {
       name,
       typeOfBusniess,
       error,
-      sent,
       phoneNumber,
       sent,
       error,
