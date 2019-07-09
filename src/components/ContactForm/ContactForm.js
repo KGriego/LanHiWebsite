@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, Message, TextArea, Grid, Header, Item, List } from "semantic-ui-react";
 
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
-
 class ContactForm extends Component {
   state = {
     accountNeeds: "",
@@ -21,6 +15,11 @@ class ContactForm extends Component {
     errorForName: false,
     sent: false
   };
+  encode = data =>
+    Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+
   handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
   handleSubmit = async e => {
     e.preventDefault();
@@ -36,8 +35,8 @@ class ContactForm extends Component {
     const submission = await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": "TerazaGroupBusinessContact",
+      body: this.encode({
+        "form-name": "contact-form",
         name,
         accountNeeds,
         concernsOrQuestions,
@@ -162,7 +161,7 @@ class ContactForm extends Component {
               success={sent}
               method={"POST"}
               onSubmit={this.handleSubmit}
-              name="TerazaGroupBusinessContact"
+              name="contact-form"
               data-netlify="true"
               data-netlify-recaptcha="true"
               data-netlify-honeypot="bot-field">
