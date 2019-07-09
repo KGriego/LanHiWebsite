@@ -88,7 +88,6 @@ class ContactForm extends Component {
       monthlyTransactions,
       name,
       typeOfBusniess,
-      error,
       phoneNumber,
       sent,
       error,
