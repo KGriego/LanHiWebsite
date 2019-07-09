@@ -2,6 +2,11 @@
   color: #ae271c !important;
   font-weight: bold;
 }
+.navigation h1.header {
+  color: #ae271c !important;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+}
 .navigation a div.item {
   color: #ae271c !important;
   line-height: inherit !important;

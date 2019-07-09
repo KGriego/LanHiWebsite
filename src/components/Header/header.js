@@ -36,7 +36,7 @@ class Header extends Component {
     }
     return (
       <Grid style={{ marginBottom: 20 }} className={"navigation"}>
-        <Grid.Row style={{ padding: 0 }}>
+        <Grid.Row className={"noPadding"}>
           <Grid.Column computer="2" tablet="1">
             {" "}
           </Grid.Column>

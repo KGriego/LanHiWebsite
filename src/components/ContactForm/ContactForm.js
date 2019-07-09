@@ -22,7 +22,7 @@ class ContactForm extends Component {
     sent: false
   };
   handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
     const {
       accountNeeds,
@@ -32,7 +32,8 @@ class ContactForm extends Component {
       name,
       typeOfBusniess
     } = this.state;
-    fetch("/", {
+    debugger;
+    const submission = await fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
@@ -45,15 +46,14 @@ class ContactForm extends Component {
         typeOfBusniess
       })
     })
-      .then(res => {
-        debugger;
-        if (res.status === 404) {
-          this.setState({ error: true });
-        } else {
-          this.setState({ sent: true });
-        }
-      })
-      .catch(error => alert(error));
+    debugger;
+    
+      //   if (res.status === 404) {
+      //     this.setState({ error: true });
+      //   } else {
+      //     this.setState({ sent: true });
+      //   }
+      // })
   };
   render() {
     const {
