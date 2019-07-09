@@ -36,7 +36,7 @@ class ContactForm extends Component {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: this.encode({
-        "form-name": "contact-form",
+        "form-name": "TerazaGroupBusinessContact",
         name,
         accountNeeds,
         concernsOrQuestions,
@@ -45,6 +45,7 @@ class ContactForm extends Component {
         typeOfBusniess
       })
     });
+    console.log(submission);
     debugger;
 
     //   if (res.status === 404) {
@@ -161,11 +162,11 @@ class ContactForm extends Component {
               success={sent}
               method={"POST"}
               onSubmit={this.handleSubmit}
-              name="contact-form"
+              name="TerazaGroupBusinessContact"
               data-netlify="true"
               data-netlify-recaptcha="true"
               data-netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="TerazaGroupBusinessContact" />
               <Form.Group widths="equal">
                 <Form.Input
                   fluid
