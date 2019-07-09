@@ -3,71 +3,147 @@ import { Button, Form, Message, TextArea, Grid, Header, Item, List } from "seman
 
 class ContactForm extends Component {
   state = {
-    accountNeeds: "",
-    concernsOrQuestions: "",
-    email: "",
-    monthlyTransactions: "",
+    loading: false,
     name: "",
-    typeOfBusniess: "",
+    email: "",
+    phoneNumber: "",
+    message: "",
+    topic: "",
     error: false,
     errorForEmail: false,
     errorForMessage: false,
     errorForName: false,
     sent: false
   };
+
+  handleChange = (e, { name, value }) => this.setState({ [name]: value });
   encode = data =>
     Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&");
 
-  handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
-  handleSubmit = async e => {
+  handleSubmit = e => {
     e.preventDefault();
-    const {
-      accountNeeds,
-      concernsOrQuestions,
-      email,
-      monthlyTransactions,
-      name,
-      typeOfBusniess
-    } = this.state;
-    debugger;
-    const submission = await fetch("/", {
+    const { state } = this;
+    const { name, email, message, topic, phoneNumber } = this.state;
+
+    this.setState({ loading: true });
+
+    const result = SendForm(state);
+
+    this.setState({ ...result });
+
+    if (state.error) {
+      this.setState({ loading: false });
+      return;
+    }
+
+    fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: this.encode({
-        "form-name": "TerazaGroupBusinessContact",
-        name,
-        accountNeeds,
-        concernsOrQuestions,
-        email,
-        monthlyTransactions,
-        typeOfBusniess
+      body: this.encode({ "form-name": "contact-form", name, email, message, topic, phoneNumber })
+    })
+      .then(res => {
+        if (res.status === 200 || res.status === 202) {
+          this.setState({
+            errorForName: false,
+            errorForEmail: false,
+            errorForMessage: false,
+            error: false,
+            sent: true,
+            loading: false,
+            name: "",
+            email: "",
+            message: "",
+            phoneNumber: "",
+            topic: ""
+          });
+        }
       })
-    });
-    console.log(submission);
-    debugger;
-
-    //   if (res.status === 404) {
-    //     this.setState({ error: true });
-    //   } else {
-    //     this.setState({ sent: true });
-    //   }
-    // })
+      .catch(err => {
+        this.setState({ error: true, loading: false });
+        console.log("err sending mail", err);
+      });
   };
+  // state = {
+  //   accountNeeds: "",
+  //   concernsOrQuestions: "",
+  //   email: "",
+  //   monthlyTransactions: "",
+  //   name: "",
+  //   typeOfBusniess: "",
+  //   error: false,
+  //   errorForEmail: false,
+  //   errorForMessage: false,
+  //   errorForName: false,
+  //   sent: false
+  // };
+  // encode = data =>
+  //   Object.keys(data)
+  //     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+  //     .join("&");
+
+  // handleChange = ({ target: { name, value } }) => this.setState({ [name]: value });
+  // handleSubmit = async e => {
+  //   e.preventDefault();
+  //   const {
+  //     accountNeeds,
+  //     concernsOrQuestions,
+  //     email,
+  //     monthlyTransactions,
+  //     name,
+  //     typeOfBusniess
+  //   } = this.state;
+  //   debugger;
+  //   const submission = await fetch("/", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //     body: this.encode({
+  //       "form-name": "TerazaGroupBusinessContact",
+  //       name,
+  //       accountNeeds,
+  //       concernsOrQuestions,
+  //       email,
+  //       monthlyTransactions,
+  //       typeOfBusniess
+  //     })
+  //   });
+  //   console.log(submission);
+  //   debugger;
+
+  //   //   if (res.status === 404) {
+  //   //     this.setState({ error: true });
+  //   //   } else {
+  //   //     this.setState({ sent: true });
+  //   //   }
+  //   // })
+  // };
   render() {
+    // const {
+    //   accountNeeds,
+    //   concernsOrQuestions,
+    //   email,
+    //   monthlyTransactions,
+    //   name,
+    //   typeOfBusniess,
+    //   error,
+    //   errorForEmail,
+    //   errorForMessage,
+    //   errorForName,
+    //   sent
+    // } = this.state;
     const {
-      accountNeeds,
-      concernsOrQuestions,
-      email,
-      monthlyTransactions,
       name,
-      typeOfBusniess,
-      error,
-      errorForEmail,
-      errorForMessage,
       errorForName,
-      sent
+      email,
+      errorForEmail,
+      phoneNumber,
+      message,
+      errorForMessage,
+      sent,
+      error,
+      topic,
+      loading
     } = this.state;
     return (
       <div style={{ backgroundColor: "#F7F7F7" }} className="ContactPage">
@@ -155,91 +231,82 @@ class ContactForm extends Component {
             </Item>
           </Grid.Row>
           <Grid.Row computer="10">
+            {" "}
             <Form
-              size="big"
+              loading={loading}
               style={{ width: "80%" }}
-              error={error}
-              success={sent}
+              size="big"
               method={"POST"}
               onSubmit={this.handleSubmit}
-              name="TerazaGroupBusinessContact"
-              data-netlify="true"
-              data-netlify-recaptcha="true"
-              data-netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="TerazaGroupBusinessContact" />
-              <Form.Group widths="equal">
-                <Form.Input
-                  fluid
-                  label="Name*"
-                  placeholder="John Doe"
-                  type="text"
-                  name="name"
-                  value={name}
+              success={sent}
+              error={error}
+              name={"contact-form"}
+              data-netlify={true}>
+              <Grid.Row computer="14">
+                <Form.Group widths="equal">
+                  <input type="hidden" name="contact-form" value="hidden" />
+                  <Form.Input
+                    label="Name*"
+                    placeholder="John Doe"
+                    type="text"
+                    name="name"
+                    value={name}
+                    fluid
+                    onChange={this.handleChange}
+                    error={errorForName}
+                  />
+                  <Form.Input
+                    label="Email*"
+                    type="email"
+                    placeholder="JohnDoe@example.com"
+                    name="email"
+                    value={email}
+                    fluid
+                    onChange={this.handleChange}
+                    error={errorForEmail}
+                  />
+                </Form.Group>
+                <Form.Group widths="equal">
+                  <Form.Input
+                    country="US"
+                    label="Phone Number"
+                    placeholder="(999)-999-9999"
+                    value={phoneNumber}
+                    name="phoneNumber"
+                    onChange={this.handleChange}
+                  />
+                  <Form.Select
+                    label="Subject"
+                    name="topic"
+                    value={topic}
+                    options={options}
+                    placeholder="Subject"
+                    onChange={this.handleChange}
+                  />
+                </Form.Group>
+                <Form.Field
+                  control={TextArea}
+                  label="More Info*"
+                  name="message"
+                  value={message}
+                  placeholder="Let us know any questions you have..."
                   onChange={this.handleChange}
-                  error={errorForName}
+                  error={errorForMessage}
                 />
-                <Form.Input
-                  fluid
-                  label="Email*"
-                  type="email"
-                  placeholder="JohnDoe@email.com"
-                  name="email"
-                  value={email}
-                  onChange={this.handleChange}
-                  error={errorForEmail}
+                <Message
+                  error
+                  header="Please Check The Form"
+                  content="Please make sure the required fields are filled"
                 />
-              </Form.Group>
-              <Form.Group widths="equal">
-                <Form.Input
-                  type="text"
-                  label="Type Of Busniess*"
-                  name="typeOfBusniess"
-                  value={typeOfBusniess}
-                  onChange={this.handleChange}
+                <Message
+                  success
+                  header="Email Sent"
+                  content="I will get back to you as soon as possible"
                 />
-                <Form.Input
-                  type="text"
-                  label="Average Monthly Transactions"
-                  placeholder="Number of Monthly Transactions"
-                  name="monthlyTransactions"
-                  value={monthlyTransactions}
-                  onChange={this.handleChange}
-                />
-              </Form.Group>
-              <Form.Field
-                control={TextArea}
-                type="text"
-                label="Accounting Needs*"
-                placeholder="Tell us more about your accounting needs"
-                name="accountNeeds"
-                value={accountNeeds}
-                onChange={this.handleChange}
-                error={errorForMessage}
-              />
-              <Form.Field
-                control={TextArea}
-                type="text"
-                label="Questions/Concerns For Us"
-                placeholder="Tell us any other questions, concerns, or special needs you may have."
-                name="concernsOrQuestions"
-                value={concernsOrQuestions}
-                onChange={this.handleChange}
-                error={errorForMessage}
-              />
-              <Message
-                error
-                header="Please Check The Form"
-                content="Please make sure the required fields are filled"
-              />
-              <Message
-                success
-                header="Email Sent"
-                content="I will get back to you as soon as possible"
-              />
-              <div data-netlify-recaptcha="true" />
-              <Button style={{ margin: 20 }} type="submit">
-                Submit
-              </Button>
+                <Button style={{ margin: 20 }} type="submit">
+                  Submit
+                </Button>
+              </Grid.Row>
             </Form>
           </Grid.Row>
         </Grid>
@@ -248,3 +315,90 @@ class ContactForm extends Component {
   }
 }
 export default ContactForm;
+
+// <Form
+// size="big"
+// style={{ width: "80%" }}
+// error={error}
+// success={sent}
+// method={"POST"}
+// onSubmit={this.handleSubmit}
+// name="TerazaGroupBusinessContact"
+// data-netlify="true"
+// data-netlify-recaptcha="true"
+// data-netlify-honeypot="bot-field">
+// <input type="hidden" name="form-name" value="TerazaGroupBusinessContact" />
+// <Form.Group widths="equal">
+//   <Form.Input
+//     fluid
+//     label="Name*"
+//     placeholder="John Doe"
+//     type="text"
+//     name="name"
+//     value={name}
+//     onChange={this.handleChange}
+//     error={errorForName}
+//   />
+//   <Form.Input
+//     fluid
+//     label="Email*"
+//     type="email"
+//     placeholder="JohnDoe@email.com"
+//     name="email"
+//     value={email}
+//     onChange={this.handleChange}
+//     error={errorForEmail}
+//   />
+// </Form.Group>
+// <Form.Group widths="equal">
+//   <Form.Input
+//     type="text"
+//     label="Type Of Busniess*"
+//     name="typeOfBusniess"
+//     value={typeOfBusniess}
+//     onChange={this.handleChange}
+//   />
+//   <Form.Input
+//     type="text"
+//     label="Average Monthly Transactions"
+//     placeholder="Number of Monthly Transactions"
+//     name="monthlyTransactions"
+//     value={monthlyTransactions}
+//     onChange={this.handleChange}
+//   />
+// </Form.Group>
+// <Form.Field
+//   control={TextArea}
+//   type="text"
+//   label="Accounting Needs*"
+//   placeholder="Tell us more about your accounting needs"
+//   name="accountNeeds"
+//   value={accountNeeds}
+//   onChange={this.handleChange}
+//   error={errorForMessage}
+// />
+// <Form.Field
+//   control={TextArea}
+//   type="text"
+//   label="Questions/Concerns For Us"
+//   placeholder="Tell us any other questions, concerns, or special needs you may have."
+//   name="concernsOrQuestions"
+//   value={concernsOrQuestions}
+//   onChange={this.handleChange}
+//   error={errorForMessage}
+// />
+// <Message
+//   error
+//   header="Please Check The Form"
+//   content="Please make sure the required fields are filled"
+// />
+// <Message
+//   success
+//   header="Email Sent"
+//   content="I will get back to you as soon as possible"
+// />
+// <div data-netlify-recaptcha="true" />
+// <Button style={{ margin: 20 }} type="submit">
+//   Submit
+// </Button>
+// </Form>
