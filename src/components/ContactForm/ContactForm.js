@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import { Button, Form, Message, TextArea, Grid, Header, Item, List } from "semantic-ui-react";
+import { SendForm } from "./ContactFormHelper";
+
+const options = [
+  { key: "Potraits", text: "Potraits", value: "Potraits" },
+  { key: "Family", text: "Family Photography", value: "Family Photography" }
+];
 
 class ContactForm extends Component {
   state = {
