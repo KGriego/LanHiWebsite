@@ -45,15 +45,15 @@ class ContactForm extends Component {
         monthlyTransactions,
         typeOfBusniess
       })
-    })
+    });
     debugger;
-    
-      //   if (res.status === 404) {
-      //     this.setState({ error: true });
-      //   } else {
-      //     this.setState({ sent: true });
-      //   }
-      // })
+
+    //   if (res.status === 404) {
+    //     this.setState({ error: true });
+    //   } else {
+    //     this.setState({ sent: true });
+    //   }
+    // })
   };
   render() {
     const {
@@ -156,12 +156,13 @@ class ContactForm extends Component {
           </Grid.Row>
           <Grid.Row computer="10">
             <Form
-              onSubmit={this.handleSubmit}
-              name="TerazaGroupBusinessContact"
               size="big"
               style={{ width: "80%" }}
               error={error}
               success={sent}
+              method={"POST"}
+              onSubmit={this.handleSubmit}
+              name="TerazaGroupBusinessContact"
               data-netlify="true"
               data-netlify-recaptcha="true"
               data-netlify-honeypot="bot-field">
