@@ -22,7 +22,7 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { state } = this;
-    const { name, email, message, topic, phoneNumber } = this.state;
+    const { name, email, typeOfBusniess, monthlyTransactions, accountNeeds, concernsOrQuestions } = this.state;
 
     this.setState({ loading: true });
 
@@ -45,15 +45,11 @@ class ContactForm extends Component {
         accountNeeds,
         monthlyTransactions,
         concernsOrQuestions,
-        typeOfBusniess
       })
     })
       .then(res => {
         if (res.status === 200 || res.status === 202) {
           this.setState({
-            errorForName: false,
-            errorForEmail: false,
-            errorForMessage: false,
             error: false,
             sent: true,
             loading: false,
