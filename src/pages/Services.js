@@ -5,7 +5,10 @@ import ServicesLayout from "../components/ServicesLayout";
 
 const ServicesPage = () => (
   <Layout>
-    <SEO title="Services" keywords={[`services`, `law`]} />
+    <SEO
+      title="Services"
+      keywords={[`services`, `law`, "information", "taxes"]}
+    />
     <ServicesLayout />
   </Layout>
 );
