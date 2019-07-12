@@ -38,7 +38,7 @@ const AboutUs = () => {
                 <Item>
                   <Item.Content>
                     <Item.Description as={"p"}>
-                      Teraza Group is an experienced accounting firm providing
+                      Teraza Group LLC is an experienced accounting firm providing
                       small business and individual accounting and tax services.
                       With 18 years of accounting and tax experience, our
                       clients can rest assured that they will receive quality

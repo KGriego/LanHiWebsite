@@ -17,7 +17,7 @@ export default class HomePage extends Component {
               <Divider horizontal>
                 <div className={"hero"}>
                   <Header textAlign="center" style={{ padding: 15 }}>
-                    <h1 className={"title"}>Teraza Group</h1>
+                    <h1 className={"title"}>Teraza Group LLC</h1>
                   </Header>
                 </div>
               </Divider>

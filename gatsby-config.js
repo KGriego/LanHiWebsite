@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Teraza Group`,
+    title: `Teraza Group LLC`,
     description: `Accounting & Tax Professionals`,
     siteURL: "terazagroup.com"
   },
