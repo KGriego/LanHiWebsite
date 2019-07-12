@@ -1,3 +1,6 @@
+.homePage {
+  font-size: 1.1em;
+}
 .imgStlying {
   box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -56,4 +59,10 @@ a {
   color: white !important;
   font-family: "Arvo";
   font-size: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 1.6em;
+  }
 }

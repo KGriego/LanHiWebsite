@@ -1,6 +1,17 @@
 import React, { Component } from "react";
-import { Button, Form, Message, TextArea, Grid, Header, Item, List } from "semantic-ui-react";
+import {
+  Button,
+  Form,
+  Message,
+  TextArea,
+  Grid,
+  Header,
+  Item,
+  List,
+  Divider
+} from "semantic-ui-react";
 import { SendForm } from "./ContactFormHelper";
+import "./ContactForm.css";
 
 class ContactForm extends Component {
   state = {
@@ -22,7 +33,14 @@ class ContactForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { state } = this;
-    const { name, email, typeOfBusniess, monthlyTransactions, accountNeeds, concernsOrQuestions } = this.state;
+    const {
+      name,
+      email,
+      typeOfBusniess,
+      monthlyTransactions,
+      accountNeeds,
+      concernsOrQuestions
+    } = this.state;
 
     this.setState({ loading: true });
 
@@ -44,7 +62,7 @@ class ContactForm extends Component {
         typeOfBusniess,
         accountNeeds,
         monthlyTransactions,
-        concernsOrQuestions,
+        concernsOrQuestions
       })
     })
       .then(res => {
@@ -90,20 +108,29 @@ class ContactForm extends Component {
       loading
     } = this.state;
     return (
-      <div style={{ backgroundColor: "#F7F7F7" }} className="ContactPage">
+      <div style={{ backgroundColor: "#F7F7F7" }} className={"ContactPage"}>
         <Grid centered>
-          <Header textAlign="center" style={{ padding: "25px 0px 0px" }}>
-            Contact Info
-          </Header>
+          <Grid.Row>
+            <Grid.Column mobile={"14"}>
+              <Divider horizontal>
+                <Header
+                  textAlign={"center"}
+                  style={{ fontSize: "2.25em", fontWeight: 400 }}
+                >
+                  Contact Info
+                </Header>
+              </Divider>
+            </Grid.Column>
+          </Grid.Row>
           <Grid.Row>
             <Grid.Column computer="12" tablet="12">
               <Item.Group>
                 <Item>
                   <Item.Content>
                     <Item.Description>
-                      We know that the accounting needs for every business are unique. Use our form
-                      to tell us more about your needs and concerns, and we can help explore your
-                      options.
+                      We know that the accounting needs for every business are
+                      unique. Use our form to tell us more about your needs and
+                      concerns, and we can help explore your options.
                     </Item.Description>
                   </Item.Content>
                 </Item>
@@ -111,7 +138,12 @@ class ContactForm extends Component {
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column computer="6" tablet="5" mobile="10" className="someMarginBottom">
+            <Grid.Column
+              computer={"6"}
+              tablet={"5"}
+              mobile={"10"}
+              className={"someMarginBottom"}
+            >
               <Header as="h3">Contact Us</Header>
               <List>
                 <List.Item>
@@ -147,7 +179,9 @@ class ContactForm extends Component {
                 </List.Item>
                 <List.Item>
                   <List.Content>
-                    <List.Description>Saturday: Appointment Only</List.Description>
+                    <List.Description>
+                      Saturday: Appointment Only
+                    </List.Description>
                   </List.Content>
                 </List.Item>
               </List>
@@ -170,7 +204,9 @@ class ContactForm extends Component {
           <Grid.Row>
             <Item>
               <Item.Content>
-                <Item.Description>Fields marked with an * are required</Item.Description>
+                <Item.Description>
+                  Fields marked with an * are required
+                </Item.Description>
               </Item.Content>
             </Item>
           </Grid.Row>
@@ -184,7 +220,8 @@ class ContactForm extends Component {
               success={sent}
               error={error}
               name={"contact-form"}
-              data-netlify={true}>
+              data-netlify={true}
+            >
               <Grid.Row computer="14">
                 <Form.Group widths="equal">
                   <input type="hidden" name="contact-form" value="hidden" />

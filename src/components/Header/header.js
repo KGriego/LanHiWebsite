@@ -50,7 +50,9 @@ class Header extends Component {
                   <Item.Description style={{ margin: 0 }}>
                     Accounting & Tax Professionals
                   </Item.Description>
-                  <Item.Description style={{ margin: 0 }}>(360)-420-3387</Item.Description>
+                  <Item.Description style={{ margin: 0 }}>
+                    (360)-420-3387
+                  </Item.Description>
                 </Item.Content>
               </Item>
             </Item.Group>
@@ -64,7 +66,11 @@ class Header extends Component {
             </Menu.Item>
           </Menu>
         </Grid.Row>
-        <Grid.Row centered style={{ padding: 0 }} className={mobile ? "hidden" : "show"}>
+        <Grid.Row
+          centered
+          style={{ padding: 0 }}
+          className={mobile ? "hidden" : "show"}
+        >
           <Menu size="huge" secondary>
             <Link to="/">
               <Menu.Item
@@ -108,7 +114,13 @@ class Header extends Component {
             </Link>
           </Menu>
         </Grid.Row>
-        {hidden && <SideNav hidden={hidden} />}
+        {hidden && (
+          <SideNav
+            hidden={hidden}
+            handleMenuState={this.handleMenuState}
+            activeItem={activeItem}
+          />
+        )}
       </Grid>
     );
   }
