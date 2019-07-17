@@ -91,7 +91,6 @@ class ContactForm extends Component {
           name: "",
           typeOfBusniess: ""
         });
-        console.log("err sending mail", err);
       });
   };
   render() {

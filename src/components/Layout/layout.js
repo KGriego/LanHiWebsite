@@ -20,9 +20,6 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => {
-      console.log(
-        "Find me on GitHub. @Midlu Kevin Griego or at my email: Kev.Gri32@gmail.com"
-      );
       return (
         <>
           <Header siteTitle={data.site.siteMetadata.title} />
