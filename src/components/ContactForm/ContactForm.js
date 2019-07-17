@@ -102,7 +102,6 @@ class ContactForm extends Component {
       monthlyTransactions,
       name,
       typeOfBusniess,
-      phoneNumber,
       sent,
       error,
       loading
